@@ -41,3 +41,53 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+let i = 0;
+let bonusArray = [];
+
+function EmpBonusCalc(){
+  this.employeeName = employees[i].name;
+  this.bonusPercentage = bonusPercCalc(employees[i].reviewRating);
+  this.totalComp = employees[i].annualSalary * ( 1 + bonusPercCalc(employees[i].reviewRating ));
+  this.totalBonus = employees[i].annualSalary * ( bonusPercCalc(employees[i].reviewRating ));
+}
+function bonusPercCalc (rating){
+  let bonusPercentage = 0;
+  let empNumberLength = employees[i].employeeNumber;
+  if( rating <= 2 ){
+    bonusPercentage += 0;
+  }
+  if( rating == 3 ){
+    bonusPercentage += 0.04;
+  }
+  if( rating == 4 ){
+    bonusPercentage += 0.06;
+  }
+  if( rating == 5 ){
+    bonusPercentage += 0.1;
+  }
+  if( empNumberLength.length == 4 ){
+    bonusPercentage += 0.05;
+  }
+  if( employees[i].annualSalary > 65000 ){
+    bonusPercentage -= 0.01;
+  }
+  if( bonusPercentage > 0.13 ){
+    bonusPercentage = 0.13;
+  }
+  if( bonusPercentage < 0 ){
+    bonusPercentage = 0;
+  }
+  return bonusPercentage;
+}
+
+function empBonusObj(){
+  for(let j=0; j<employees.length; j++){
+    i=j;
+    bonusArray.push(new EmpBonusCalc());
+  }
+  i=0
+  return bonusArray;
+}
+
+console.log(empBonusObj());
