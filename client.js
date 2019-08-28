@@ -40,7 +40,7 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
-console.log( employees );
+//console.log( employees );
 
 let i = 0;
 let bonusArray = [];
@@ -53,8 +53,8 @@ function readyNow(){
 function EmpBonusCalc(){
   this.employeeName = employees[i].name;
   this.bonusPercentage = bonusPercCalc(employees[i].reviewRating);
-  this.totalComp = employees[i].annualSalary * ( 1 + bonusPercCalc(employees[i].reviewRating ));
-  this.totalBonus = employees[i].annualSalary * ( bonusPercCalc(employees[i].reviewRating ));
+  this.totalComp = Math.round(employees[i].annualSalary * ( 1 + bonusPercCalc(employees[i].reviewRating )));
+  this.totalBonus = Math.round(employees[i].annualSalary * ( bonusPercCalc(employees[i].reviewRating )));
 }
 function bonusPercCalc (rating){
   let bonusPercentage = 0;
@@ -124,47 +124,47 @@ function showBonusNow(){
       employeeNameOne.empty();
       employeeNameOne.append(bonusArray[k].employeeName);
       bonusPercOutOne.empty();
-      bonusPercOutOne.append('bonus percent- ',bonusArray[k].bonusPercentage);
+      bonusPercOutOne.append('bonus percent- ',(bonusArray[k].bonusPercentage)*100);
       compOutputOne.empty();
-      compOutputOne.append('total compensation- ',bonusArray[k].totalComp);
+      compOutputOne.append('total compensation- $',bonusArray[k].totalComp);
       totalBonOutOne.empty();
-      totalBonOutOne.append('total bonus- ',bonusArray[k].totalBonus);
+      totalBonOutOne.append('total bonus- $',bonusArray[k].totalBonus);
     }else if(k==1){
       employeeNameTwo.empty();
       employeeNameTwo.append(bonusArray[k].employeeName);
       bonusPercOutTwo.empty();
-      bonusPercOutTwo.append('bonus percent- ',bonusArray[k].bonusPercentage);
+      bonusPercOutTwo.append('bonus percent- ',(bonusArray[k].bonusPercentage)*100);
       compOutputTwo.empty();
-      compOutputTwo.append('total compensation- ',bonusArray[k].totalComp);
+      compOutputTwo.append('total compensation- $',bonusArray[k].totalComp);
       totalBonOutTwo.empty();
-      totalBonOutTwo.append('total bonus- ',bonusArray[k].totalBonus);
+      totalBonOutTwo.append('total bonus- $',bonusArray[k].totalBonus);
     }else if(k==2){
       employeeNameThree.empty();
       employeeNameThree.append(bonusArray[k].employeeName);
       bonusPercOutThree.empty();
-      bonusPercOutThree.append('bonus percent- ',bonusArray[k].bonusPercentage);
+      bonusPercOutThree.append('bonus percent- ',(bonusArray[k].bonusPercentage)*100);
       compOutputThree.empty();
-      compOutputThree.append('total compensation- ',bonusArray[k].totalComp);
+      compOutputThree.append('total compensation- $',bonusArray[k].totalComp);
       totalBonOutThree.empty();
-      totalBonOutThree.append('total bonus- ',bonusArray[k].totalBonus);
+      totalBonOutThree.append('total bonus- $',bonusArray[k].totalBonus);
     }else if(k==3){
       employeeNameFour.empty();
       employeeNameFour.append(bonusArray[k].employeeName);
       bonusPercOutFour.empty();
-      bonusPercOutFour.append('bonus percent- ',bonusArray[k].bonusPercentage);
+      bonusPercOutFour.append('bonus percent- ',(bonusArray[k].bonusPercentage)*100);
       compOutputFour.empty();
-      compOutputFour.append('total compensation- ',bonusArray[k].totalComp);
+      compOutputFour.append('total compensation- $',bonusArray[k].totalComp);
       totalBonOutFour.empty();
-      totalBonOutFour.append('total bonus- ',bonusArray[k].totalBonus);
+      totalBonOutFour.append('total bonus- $',bonusArray[k].totalBonus);
     }else if(k==4){
       employeeNameFive.empty();
       employeeNameFive.append(bonusArray[k].employeeName);
       bonusPercOutFive.empty();
-      bonusPercOutFive.append('bonus percent- ',bonusArray[k].bonusPercentage);
+      bonusPercOutFive.append('bonus percent- ',(bonusArray[k].bonusPercentage)*100);
       compOutputFive.empty();
-      compOutputFive.append('total compensation- ',bonusArray[k].totalComp);
+      compOutputFive.append('total compensation- $',bonusArray[k].totalComp);
       totalBonOutFive.empty();
-      totalBonOutFive.append('total bonus- ',bonusArray[k].totalBonus);
+      totalBonOutFive.append('total bonus- $',bonusArray[k].totalBonus);
     }
   }
 }
