@@ -1,0 +1,17 @@
+button{
+    border-radius: 12px;
+}
+body{
+    margin: auto;
+    width: 600px;
+    background-color:#C7F8F3;
+}
+h2{
+    color: #1F1CA0;
+}
+h1{
+    color:darkorange;
+}
+ul{
+    color:darkblue;
+}
